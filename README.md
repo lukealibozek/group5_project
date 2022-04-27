@@ -16,3 +16,10 @@
 5. **IMPORTANT** - switch back to main locally (`git checkout main`) 
    1. `git status`
    2. PPUULLLLL (`git pull`). **ENSURE LOCAL MAIN IT UP TO DATE**
+
+## Week 1
+- Decide on a topic, source data, and perform exploratory data analysis.
+- Create a repository and establish individual branches for each team member.
+- Create a mockup of a machine learning model.
+- Create a mockup of a database.
+- Decide which technologies will be used.
