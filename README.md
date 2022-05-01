@@ -34,4 +34,4 @@
 - Given that the COVID-19 data includes geography by county, US Census data (2020-2021) by county was also pulled to add additional context to the analysis.
 - We can make an assumption that non-missing hospitalization and ICU cases are accurate data points likely provided by an institution (hospital). Moreso, the positive ICU cases may present an even greater opportunity to analyze comprehensive data points. 
 
-Our goal is to predict resource utilization in response to the COVID-19 pandemic by geography.
+Our goal is to predict resource utilization (possibly hospitalization or ICU admittance) in response to COVID-19, segmented by geography.
