@@ -12,5 +12,9 @@
 3. Make changes, `add` `commit` `push` to branch
 4. Create pull requests - approve, merge, etc.
 5. **IMPORTANT** - switch back to main locally (`git checkout main`) 
-   1. `git status`
-   2. PPUULLLLL (`git pull`). **ENSURE LOCAL MAIN IT UP TO DATE**
+   1. `git status` (if outdated, will be no updates found)
+   2. `git pull` **ENSURE LOCAL "MAIN" IS UP TO DATE**
+
+## If Branch out of date
+1. `git checkout [your_branch]`
+2. `git merge main`
