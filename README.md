@@ -39,6 +39,7 @@ Our goal is to predict resource utilization (possibly hospitalization or ICU adm
 ## Technology Use
 
 - As a group we are still determining the question we are going to answer with our analysis. Once that is determined then the techonology czar will be able to expand more on the technology that will be used in the project.
+- The technology czar will also be able to expand on the machine learning aspect the project as well as this is an essential part of the project.
 
 ## Technology Suggestions
 
