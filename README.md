@@ -42,4 +42,10 @@ Our goal is to predict resource utilization (possibly hospitalization or ICU adm
 
 ## Technology Suggestions
 
- - Based on the data we have so dar and with us breaking down CSV files, the python would be beneficial so we can import the files and break them down to the data that is needed to answer our questions. Using Python, we can create codes to eliminate data that is not useful and create a chart of the data only needed for our analysis. 
+- Based on the data we have so dar and with us breaking down CSV files, the python would be beneficial so we can import the files and break them down to the data that is needed to answer our questions. Using Python, we can create codes to eliminate data that is not useful and create a chart of the data only needed for our analysis. 
+
+- Below is an example of from one of our previous modules where we had to import data from a csv file.
+- file_path = "C:\\Users\Documents\GitHub\Cryptocurrencies\iris.csv"
+iris_df = pd.read_csv(file_path)
+iris_df.head()
+- Based on the example above we would be able to import the data by uploading the file path to retrieve the data we are going to analyze.
