@@ -35,3 +35,7 @@
 - We can make an assumption that non-missing hospitalization and ICU cases are accurate data points likely provided by an institution (hospital). Moreso, the positive ICU cases may present an even greater opportunity to analyze comprehensive data points. 
 
 Our goal is to predict resource utilization (possibly hospitalization or ICU admittance) in response to COVID-19, segmented by geography.
+
+## Technology Use
+
+- As a group we are still determining the question we are going to answer with our analysis. Once that is determined then the techonology czar will be able to expand more on the technology that will be used in the project.
