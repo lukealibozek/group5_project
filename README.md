@@ -39,3 +39,7 @@ Our goal is to predict resource utilization (possibly hospitalization or ICU adm
 ## Technology Use
 
 - As a group we are still determining the question we are going to answer with our analysis. Once that is determined then the techonology czar will be able to expand more on the technology that will be used in the project.
+
+## Technology Suggestions
+
+ - Based on the data we have so dar and with us breaking down CSV files, the python would be beneficial so we can import the files and break them down to the data that is needed to answer our questions. Using Python, we can create codes to eliminate data that is not useful and create a chart of the data only needed for our analysis. 
