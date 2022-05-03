@@ -21,3 +21,8 @@
 - [ ] Branch created
 - [ ] ML mockup
 - [ ] 4 commits
+
+## Jamie Orozco
+- [x] Branch created
+- [ ] ML mockup
+- [ ] 4 commits
