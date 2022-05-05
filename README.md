@@ -15,6 +15,7 @@ To clean this dataset we will:
 - Check for null values
 - Check data types
 - Append a wine type to each dataset (red / white)
+- Append a column for wine classification (binary, good / bad based on a certain quality threshold)
 - Create a union of both tables to conduct testing across both datasets.
   
 ## Database
