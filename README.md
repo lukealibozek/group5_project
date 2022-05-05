@@ -18,7 +18,7 @@ To clean this dataset we will:
 - Create a union of both tables to conduct testing across both datasets.
   
 ## Database
--We are using Postgres for our database
+- We are using Postgres for our database
 - 
 
 ## Model
