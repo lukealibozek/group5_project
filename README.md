@@ -1,6 +1,6 @@
 # Wine Quality Analysis
 
-For this project ....
+For this project we aim to assess wine quality, and whether it is possible to classify a wine based on its chemical properties.
 
 ## Sources
 
@@ -35,5 +35,3 @@ This project will aim to determine the following:
 1. Is a "Good" wine able to be predicted via the analysis of a wine's physicochemical properties? 
 2. What physicochemical features are most responsible for determining wine quality?
 3. Can a wine quality evaluation be conducted agnostic of wine type (red or white), or do such evaluations need to remain segregated by type?
-
-
