@@ -19,8 +19,10 @@ To clean this dataset we will:
 - Create a union of both tables to conduct testing across both datasets.
   
 ## Database
-- We are using Postgres for our database
-- 
+- Use QuickDB to draft up the database structure
+- Use Postgres for the database
+-
+
 
 ## Model
 
