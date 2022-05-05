@@ -24,22 +24,13 @@ To clean this dataset we will:
 
 ## Model
 
+For this project we will use Ensemble Learners to predict the wine classification, as well as determining feature importance to assess which feature is more responsible for determining quality.
+
+## The Question(s)
+
+This project will aim to determine the following:
+1. Is a "Good" wine able to be predicted via the analysis of a wine's physicochemical properties? 
+2. What physicochemical features are most responsible for determining wine quality?
+3. Can a wine quality evaluation be conducted agnostic of wine type (red or white), or do such evaluations need to remain segregated by type?
 
 
-## The Question
-
-
-
-1. What sources are
-2. Plan to clean (EDA)
-   1. joining? etc etc
-3. What database (postgres)
-   1. Structure of db? maybe how many tables, diff keys? etc.
-4. Model - what plan on using (linear regression?) the WHY
-5. THE QUESTION - what wine attributes contribute most to quality?
-
-- All collaborators
-- All using branches
-  - ML
-  - DB
-  - (more descriptive to the task at hand)
