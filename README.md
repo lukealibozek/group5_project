@@ -21,7 +21,8 @@ To clean this dataset we will:
 ## Database
 - Use QuickDB to draft up the database structure
 - Use Postgres for the database
--
+
+![](resources/QuickDBD-wine.png)
 
 
 ## Model
