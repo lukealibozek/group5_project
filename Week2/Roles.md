@@ -12,10 +12,10 @@
 Let's take a look at how these assignments are distributed across the roles:
 
 - **Team**: Continue with analysis: add, commit, push, create new branches as needed, and utilize GitHub's built-in tools, such as PRs, to review the work you and your teammates have completed (this is an ongoing process, so keep it up!).
-- **Square (Machine)**: Refine the machine learning model you'll be using (train and test).
+- **Square (ML)**: Refine the machine learning model you'll be using (train and test).
 - **Triangle (DB)**: Transform the mockup database into a full database that integrates with your work.
-- **Circle (Presentation)**: Continue with analysis and create visuals to accompany the data story.
-- **X (Dashboard)**: Outline and begin work on a dashboard to house your final project. Check and test the work completed against the rubric.
+- **Circle (Preso)**: Continue with analysis and create visuals to accompany the data story.
+- **X (Dash)**: Outline and begin work on a dashboard to house your final project. Check and test the work completed against the rubric.
 
 ---
 # Rubric
