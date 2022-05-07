@@ -2,20 +2,20 @@
 ---
 ## Roles:
 
-|Team member    |D1         |D2         |D3     |D4     |
-|---            |---        |---        |---    |---    |
-|Lawrence       |X          |Square     |       |       |
-|Tracy/Justin   |Circle     |X          |       |       |
-|Jamie/David    |Triangle   |Triangle   |       |       |
-|Luke           |Square     |Circle     |       |       |
+|Team member    |D1         |D2             |D3     |D4     |
+|---            |---        |---            |---    |---    |
+|Lawrence       |Tech       |Dash           |       |       |
+|Tracy/Justin   |DB         |DB             |       |       |
+|Jamie/David    |ML         |ML             |       |       |
+|Luke           |Repo       |Preso          |       |       |
 
 Let's take a look at how these assignments are distributed across the roles:
 
 - **Team**: Continue with analysis: add, commit, push, create new branches as needed, and utilize GitHub's built-in tools, such as PRs, to review the work you and your teammates have completed (this is an ongoing process, so keep it up!).
-- **Square**: Refine the machine learning model you'll be using (train and test).
-- **Triangle**: Transform the mockup database into a full database that integrates with your work.
-- **Circle**: Continue with analysis and create visuals to accompany the data story.
-- **X**: Outline and begin work on a dashboard to house your final project. Check and test the work completed against the rubric.
+- **Square (Machine)**: Refine the machine learning model you'll be using (train and test).
+- **Triangle (DB)**: Transform the mockup database into a full database that integrates with your work.
+- **Circle (Presentation)**: Continue with analysis and create visuals to accompany the data story.
+- **X (Dashboard)**: Outline and begin work on a dashboard to house your final project. Check and test the work completed against the rubric.
 
 ---
 # Rubric
