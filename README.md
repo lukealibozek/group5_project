@@ -53,7 +53,9 @@ quality_perc.fillna(0,inplace=True)
 ![](resources/good_threshold.png)
   
 </details>
+
 To clean this dataset we will:
+
 - Check for null values
 - Check data types
 - Append a wine type to each dataset (red / white)
