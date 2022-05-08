@@ -1,6 +1,6 @@
 # Wine Quality Analysis
 
-For this project ....
+For this project we aim to assess wine quality, and whether it is possible to classify a wine based on its chemical properties.
 
 ## Sources
 
@@ -15,30 +15,23 @@ To clean this dataset we will:
 - Check for null values
 - Check data types
 - Append a wine type to each dataset (red / white)
+- Append a column for wine classification (binary, good / bad based on a certain quality threshold)
 - Create a union of both tables to conduct testing across both datasets.
   
 ## Database
+- Use QuickDB to draft up the database structure
+- Use Postgres for the database
 
+![](resources/QuickDBD-wine.png)
 
 
 ## Model
 
+For this project we will use Ensemble Learners to predict the wine classification, as well as determining feature importance to assess which feature is more responsible for determining quality.
 
+## The Question(s)
 
-## The Question
-
-
-
-1. What sources are
-2. Plan to clean (EDA)
-   1. joining? etc etc
-3. What database (postgres)
-   1. Structure of db? maybe how many tables, diff keys? etc.
-4. Model - what plan on using (linear regression?) the WHY
-5. THE QUESTION - what wine attributes contribute most to quality?
-
-- All collaborators
-- All using branches
-  - ML
-  - DB
-  - (more descriptive to the task at hand)
+This project will aim to determine the following:
+1. Is a "Good" wine able to be predicted via the analysis of a wine's physicochemical properties? 
+2. What physicochemical features are most responsible for determining wine quality?
+3. Can a wine quality evaluation be conducted agnostic of wine type (red or white), or do such evaluations need to remain segregated by type?
