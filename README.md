@@ -65,6 +65,40 @@ quality_perc.fillna(0,inplace=True)
 
 For this project we will use Ensemble Learners to predict the wine classification, as well as determining feature importance to assess which feature is more responsible for determining quality.
 
+Steps Taked for ML Mockup
+
+1. Read in CSV
+2. Data Cleaning    
+    A. Compile Null Lists
+    B. Missing Data Check
+    C. Create DF with lists
+    D. Set Index
+    E. Quality Score Distribution
+    F. Fill Blanks with 0
+    G. Visualization of Distribution of Wine Quality Scores by Type
+    H. Set Classification Column (If wine is greater 7 its "good")
+    I. Combine Dataframes
+3. Data Exploration 
+    A. Counts
+    B. Averages 
+    C. Created Dummy Variable for Strings "Type" and "Class"
+    D. Outliers
+    E. Bar Graphs 
+    F. Boxplot
+    G. Scatter
+    H. Heatmap
+4. Split into Training and Testing
+    A. Defined Features 
+    B. Partitioned Data
+5. Models
+    A. Random Forrest
+    B. Over & Sampling
+    C. Logistic Regression 
+    
+    
+    
+
+
 ## The Question(s)
 
 This project will aim to determine the following:
