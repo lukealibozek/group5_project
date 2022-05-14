@@ -75,22 +75,15 @@ Steps Taked for ML Mockup
 -There is no missing data
 * Create DF with lists
 * Set Index
-    
 <img width="515" alt="image" src="https://user-images.githubusercontent.com/95591222/168451298-321e1ebe-1159-433a-8832-34c94e649305.png">
-
-    * Quality Score Distribution
-     * Fill Blanks with 0
-     
+* Quality Score Distribution
+* Fill Blanks with 0
 <img width="81" alt="image" src="https://user-images.githubusercontent.com/95591222/168451310-3adc685c-5e4e-40d0-aa0e-6fbc40c9f861.png">
-    * Visualization of Distribution of Wine Quality Scores by Type
-    
+* Visualization of Distribution of Wine Quality Scores by Type
 <img width="191" alt="image" src="https://user-images.githubusercontent.com/95591222/168451336-dee4b34d-f5b9-4cbf-87b0-abfbd58511fe.png">
-    
-    * Set Classification Column (If wine is greater 5 its "good")
-    
+* Set Classification Column (If wine is greater 5 its "good")
 <img width="188" alt="image" src="https://user-images.githubusercontent.com/95591222/168451362-fd45226a-aa10-40b5-88dd-4cd070f69660.png">
-
-    * Combine Dataframes
+* Combine Dataframes
 3. Data Exploration 
     * Quality
     * Counts
