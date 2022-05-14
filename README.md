@@ -76,7 +76,7 @@ Steps Taked for ML Mockup
     * Quality Score Distribution
     * Fill Blanks with 0
     * Visualization of Distribution of Wine Quality Scores by Type
-    * Set Classification Column (If wine is greater 7 its "good")
+    * Set Classification Column (If wine is greater 5 its "good")
     * Combine Dataframes
 3. Data Exploration 
     * Counts
