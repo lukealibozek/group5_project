@@ -72,7 +72,7 @@ Steps Taked for ML Mockup
     * Compile Null Lists
     -There are no null values in the given data set
     * Missing Data Check
-    - There is no missing data
+    -There is no missing data
     * Create DF with lists
     * Set Index
     
