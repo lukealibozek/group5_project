@@ -61,7 +61,7 @@ quality_perc.fillna(0,inplace=True)
 ![](resources/QuickDBD-wine.png)
 
 
-## Model
+### Model
 
 For this project we will use Ensemble Learners to predict the wine classification, as well as determining feature importance to assess which feature is more responsible for determining quality.
 
@@ -92,6 +92,7 @@ Steps Taken for ML Mockup
     
  <img width="501" alt="image" src="https://user-images.githubusercontent.com/95591222/168451540-08e03702-083a-485c-bf8b-a71cd83dead8.png">
         - The number of rows before merging was 1599 and the number of rows after merging was 6497. The columns remained at 14.
+
 3. Data Exploration 
     * Quality
     * Counts
