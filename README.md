@@ -102,3 +102,11 @@ This project will aim to determine the following:
 1. Is a "Good" wine able to be predicted via the analysis of a wine's physicochemical properties? 
 2. What physicochemical features are most responsible for determining wine quality?
 3. Can a wine quality evaluation be conducted agnostic of wine type (red or white), or do such evaluations need to remain segregated by type?
+
+## The Dashboard
+
+https://docs.google.com/presentation/d/1S7EIV4yDhFQDB4CjyAN1KUtyvd31ClgRe1xQhX6uzLc/edit#slide=id.g11bf644337f_0_134
+
+Storyboard on a Google Slide(s)
+Description of the tool(s) that will be used to create the final dashboard
+Description of interactive element(s)
