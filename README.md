@@ -107,6 +107,7 @@ This project will aim to determine the following:
 
 https://docs.google.com/presentation/d/1S7EIV4yDhFQDB4CjyAN1KUtyvd31ClgRe1xQhX6uzLc/edit#slide=id.g11bf644337f_0_134
 
-Storyboard on a Google Slide(s)
-Description of the tool(s) that will be used to create the final dashboard
-Description of interactive element(s)
+1. Storyboard on a Google Slide(s)
+2. Description of the tool(s) that will be used to create the final dashboard
+5. Description of interactive element(s)
+
