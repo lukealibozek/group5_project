@@ -67,9 +67,10 @@ For this project we will use Ensemble Learners to predict the wine classificatio
 
 Steps Taked for ML Mockup
 
-1. Read in CSV
+1. Read in CSV and view data set
 2. Data Cleaning    
     * Compile Null Lists
+    * # There are no null values in the given data set
     * Missing Data Check
     * Create DF with lists
     * Set Index
