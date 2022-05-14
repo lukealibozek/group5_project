@@ -65,25 +65,33 @@ quality_perc.fillna(0,inplace=True)
 
 For this project we will use Ensemble Learners to predict the wine classification, as well as determining feature importance to assess which feature is more responsible for determining quality.
 
-Steps Taked for ML Mockup
+Steps Taken for ML Mockup
 
 1. Read in CSV and view data set
 2. Data Cleaning    
-* Compile Null Lists
--There are no null values in the given data set
-* Missing Data Check
--There is no missing data
-* Create DF with lists
-* Set Index
+    * Compile Null Lists
+        -There are no null values in the given data set
+    * Missing Data Check
+        -There is no missing data
+    * Create DF with lists
+    * Set Index
 <img width="515" alt="image" src="https://user-images.githubusercontent.com/95591222/168451298-321e1ebe-1159-433a-8832-34c94e649305.png">
-* Quality Score Distribution
-* Fill Blanks with 0
+
+    * Quality Score Distribution
+    * Fill Blanks with 0
 <img width="81" alt="image" src="https://user-images.githubusercontent.com/95591222/168451310-3adc685c-5e4e-40d0-aa0e-6fbc40c9f861.png">
-* Visualization of Distribution of Wine Quality Scores by Type
+
+    * Visualization of Distribution of Wine Quality Scores by Type
 <img width="191" alt="image" src="https://user-images.githubusercontent.com/95591222/168451336-dee4b34d-f5b9-4cbf-87b0-abfbd58511fe.png">
-* Set Classification Column (If wine is greater 5 its "good")
+
+    * Set Classification Column (If wine is greater 5 its "good")
 <img width="188" alt="image" src="https://user-images.githubusercontent.com/95591222/168451362-fd45226a-aa10-40b5-88dd-4cd070f69660.png">
-* Combine Dataframes
+        - Distribution is relatively even across both wines, with most wines scoring 5's and 6's.However, when it is too balanced it ends up giving us the perfect model. The first classification was set at 7 and gave an accuracy of 100%. By moving the threshold to 5 we can get a more realiable model. 
+        
+    * Combine Dataframes
+    
+ <img width="501" alt="image" src="https://user-images.githubusercontent.com/95591222/168451540-08e03702-083a-485c-bf8b-a71cd83dead8.png">
+        - The number of rows before merging was 1599 and the number of rows after merging was 6497. The columns remained at 14.
 3. Data Exploration 
     * Quality
     * Counts
