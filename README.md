@@ -91,9 +91,10 @@ Steps Taked for ML Mockup
     * Defined Features 
     * Partitioned Data
 5. Models
+    * Logistic Regression
     * Over & Sampling
     * Random Forrest
-    * Logistic Regression
+    * Linear Regression
     
    
 ## The Question(s)
