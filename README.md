@@ -44,11 +44,6 @@ quality_perc.fillna(0,inplace=True)
 
 ![](resources/Quality_distro.png)
 
-### Takeaways
-
-- Distribution is relatively even across both wines, with most wines scoring 5's and 6's
-- Red wine max quality score was 8, while White wine maxed at 9
-- A "good" wine score higher than 7 will yield very few wines - therefore, "good" classification is best set at 7, for the purposes of this analysis. 
 
 ![](resources/good_threshold.png)
   
