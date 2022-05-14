@@ -83,17 +83,18 @@ For this project we will use Ensemble Learners to predict the wine classificatio
 
     * Visualization of Distribution of Wine Quality Scores by Type
 <img width="191" alt="image" src="https://user-images.githubusercontent.com/95591222/168451336-dee4b34d-f5b9-4cbf-87b0-abfbd58511fe.png">
-
+        - Red wine max quality score was 8, while White wine maxed at 9
+  
     * Set Classification Column (If wine is greater 5 its "good")
 <img width="188" alt="image" src="https://user-images.githubusercontent.com/95591222/168451362-fd45226a-aa10-40b5-88dd-4cd070f69660.png">
         - Distribution is relatively even across both wines, with most wines scoring 5's and 6's.However, when it is too balanced it ends up giving us the perfect model. The first classification was set at 7 and gave an accuracy of 100%. By moving the threshold to 5 we can get a more realiable model. 
-        
+     
     * Combine Dataframes
     
  <img width="501" alt="image" src="https://user-images.githubusercontent.com/95591222/168451540-08e03702-083a-485c-bf8b-a71cd83dead8.png">
         - The number of rows before merging was 1599 and the number of rows after merging was 6497. The columns remained at 14.
 
-3. Data Exploration 
+### Data Exploration Continued...
     * Quality
     * Counts
     * Averages 
