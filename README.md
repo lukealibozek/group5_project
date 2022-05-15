@@ -89,19 +89,47 @@ Compile Null Lists
  <img width="501" alt="image" src="https://user-images.githubusercontent.com/95591222/168451540-08e03702-083a-485c-bf8b-a71cd83dead8.png">
         - The number of rows before merging was 1599 and the number of rows after merging was 6497. The columns remained at 14.
 
-### Data Exploration Continued...
-    * Quality
+3. Data Exploration
     * Counts
     * Averages 
+<img width="212" alt="image" src="https://user-images.githubusercontent.com/95591222/168451839-9ba42771-2a00-437c-862a-6fe33ce2593f.png">
+  
     * Created Dummy Variable for Strings "Type" and "Class"
+<img width="42" alt="image" src="https://user-images.githubusercontent.com/95591222/168451860-9f30c511-265d-4512-a003-1d196a7bac80.png">    
+    
     * Outliers
+<img width="169" alt="image" src="https://user-images.githubusercontent.com/95591222/168451879-c620b1ed-4751-43b5-9fb7-97b725d3a23e.png">
+        - This step helps us to identify mean, median, min, max and percentages(25,50,75) of feature attributes.
+        - 75% of the data has an alcohol percentage of 14.9
+        - Minimum value of sulphates is .22 and maximum of 2
+        
     * Bar Graphs 
+<img width="188" alt="image" src="https://user-images.githubusercontent.com/95591222/168451910-6ccbf03b-896b-47e5-89af-1a7b8f598f1f.png">
+
     * Boxplot
+<img width="630" alt="image" src="https://user-images.githubusercontent.com/95591222/168451925-1c62e435-6dc7-4796-9692-b406975cca2b.png">
+        - There are alot of outliers in almost every category
+<img width="632" alt="image" src="https://user-images.githubusercontent.com/95591222/168451951-e393c1b6-b660-451e-8529-df6432b7ae59.png">
+
     * Scatter
+<img width="412" alt="image" src="https://user-images.githubusercontent.com/95591222/168451959-d97f0063-ba5d-466f-b828-884117b72e1e.png">
+        - We are able to see how the different values are correlated with each other or not
+        - Total sulfur and sulfur have a slight linear relationship as the data skews right
+        - Most of the data shows there isnt a visable linear relationship 
+        
     * Heatmap
+<img width="330" alt="image" src="https://user-images.githubusercontent.com/95591222/168451981-a95654dd-5c11-4ba1-a58b-b33ed216e213.png">
+        - The higher values are the darker shades and the less are the lighter shades
+        - From the above chart we can see that free sulfur dioxide, total sulfer dioxide, and type have the highest values 
+        - From the chart we can also see that the alcohol, density and volatile acidity have the lowest values
+        
 4. Split into Training and Testing
     * Defined Features 
     * Partitioned Data
+<img width="476" alt="image" src="https://user-images.githubusercontent.com/95591222/168452049-fdceff49-0e44-4950-93c2-77305816aec4.png">
+        - Partition data into training (80%) and testing (20%)
+        - Trained on 80 and tested on 20
+        
 5. Models
     * Logistic Regression
     * Over & Sampling
