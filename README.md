@@ -95,10 +95,12 @@ Compile Null Lists
 <img width="212" alt="image" src="https://user-images.githubusercontent.com/95591222/168451839-9ba42771-2a00-437c-862a-6fe33ce2593f.png">
   
     * Created Dummy Variable for Strings "Type" and "Class"
+    
 <img width="42" alt="image" src="https://user-images.githubusercontent.com/95591222/168451860-9f30c511-265d-4512-a003-1d196a7bac80.png">    
     
     * Outliers
 <img width="169" alt="image" src="https://user-images.githubusercontent.com/95591222/168451879-c620b1ed-4751-43b5-9fb7-97b725d3a23e.png">
+
         - This step helps us to identify mean, median, min, max and percentages(25,50,75) of feature attributes.
         - 75% of the data has an alcohol percentage of 14.9
         - Minimum value of sulphates is .22 and maximum of 2
@@ -113,12 +115,14 @@ Compile Null Lists
 
     * Scatter
 <img width="412" alt="image" src="https://user-images.githubusercontent.com/95591222/168451959-d97f0063-ba5d-466f-b828-884117b72e1e.png">
+
         - We are able to see how the different values are correlated with each other or not
         - Total sulfur and sulfur have a slight linear relationship as the data skews right
         - Most of the data shows there isnt a visable linear relationship 
         
     * Heatmap
 <img width="330" alt="image" src="https://user-images.githubusercontent.com/95591222/168451981-a95654dd-5c11-4ba1-a58b-b33ed216e213.png">
+
         - The higher values are the darker shades and the less are the lighter shades
         - From the above chart we can see that free sulfur dioxide, total sulfer dioxide, and type have the highest values 
         - From the chart we can also see that the alcohol, density and volatile acidity have the lowest values
@@ -132,9 +136,16 @@ Compile Null Lists
         
 5. Models
     * Logistic Regression
-    * Over & Sampling
+<img width="71" alt="image" src="https://user-images.githubusercontent.com/95591222/168452155-734514d9-7022-41cb-92d5-42aba459e124.png">
+        - Accuracy score of .96184
+  
     * Random Forrest
+<img width="274" alt="image" src="https://user-images.githubusercontent.com/95591222/168452208-8ba14414-9f12-47f3-b083-f0c311b17eb4.png">
+        - The features of the most importance are free sulfer dioxide, volatile acidity, total sulfur dioxide. 
+        - The features of the least importance are fixed acidity, alcohol, or type. 
+
     * Linear Regression
+<img width="194" alt="image" src="https://user-images.githubusercontent.com/95591222/168452267-3412f760-624c-443a-a62a-ddfee996a381.png">
     
    
 ## The Question(s)
