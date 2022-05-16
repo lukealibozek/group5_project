@@ -55,11 +55,80 @@ quality_perc.fillna(0,inplace=True)
 </details>
   
 ## Database
-- Use QuickDB to draft up the database structure
-- Use Postgres for the database
 
-![](resources/QuickDBD-wine.png)
+To create the database, the individual CSVs needed to be pre-processed. 
 
+1. Data cleaned (mirroring work done in the Machine Learning step)
+2. Quality classified (wine scoring '5' or better is classified as 'good')
+3. A unique index created that would remain unique once both tables are combined (see below)
+
+![](resources/db_class.png)
+Classification added
+
+![](resources/unique_index.png)
+Unique index created with prefix for the wine type
+
+From here, an Amazon AWS database was built, and manipulated via pgAdmin using PostGresSQL
+
+![](resources/aws1.png)
+
+![](resources/aws2.png)
+
+The schema was established:
+```sql
+DROP TABLE IF EXISTS red_wine;
+DROP TABLE IF EXISTS white_wine;  
+
+CREATE TABLE red_wine (
+  id VARCHAR(255) PRIMARY KEY NOT NULL,
+  fixed_acidity REAL,
+  volatile_acidity REAL,
+  citric_acid REAL,
+  residual_sugar REAL,
+  chlorides REAL,
+  free_sulfur_dioxide REAL,
+  total_sulfur_dioxide REAL,
+  density REAL,
+  pH REAL,
+  sulphates REAL,
+  alcohol REAL,
+  quality INT ,
+  type VARCHAR(255) ,
+  class VARCHAR(255) 
+);
+
+CREATE TABLE white_wine (
+  id VARCHAR(255) PRIMARY KEY NOT NULL,
+  fixed_acidity REAL,
+  volatile_acidity REAL,
+  citric_acid REAL,
+  residual_sugar REAL,
+  chlorides REAL,
+  free_sulfur_dioxide REAL,
+  total_sulfur_dioxide REAL,
+  density REAL,
+  pH REAL,
+  sulphates REAL,
+  alcohol REAL,
+  quality INT ,
+  type VARCHAR(255) ,
+  class VARCHAR(255) 
+);
+```
+![](resources/postgres_test.png)
+
+Finally, the data was combined
+
+```sql
+DROP TABLE IF EXISTS combined;
+
+SELECT * INTO combined FROM red_wine
+UNION
+SELECT * FROM white_wine;
+
+SELECT * FROM combined;
+```
+![](resources/SQL%20join.png)
 
 ## Model
 
