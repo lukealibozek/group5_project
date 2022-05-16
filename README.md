@@ -65,7 +65,7 @@ quality_perc.fillna(0,inplace=True)
 
 For this project we will use Ensemble Learners to predict the wine classification, as well as determining feature importance to assess which feature is more responsible for determining quality.
 
-Steps Taked for ML Mockup
+Steps Taken for ML Mockup
 
 1. Read in CSV
 2. Data Cleaning    
