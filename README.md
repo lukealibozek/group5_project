@@ -130,8 +130,8 @@ SELECT * FROM combined;
 For this project we will use Ensemble Learners to predict the wine classification, as well as determining feature importance to assess which feature is more responsible for determining quality.
 
 
-1. Read in CSV and view data set
-2. Data Cleaning    
+### 1. Read in CSV and view data set
+### 2. Data Cleaning    
     * Compile Null Lists
 -There are no null values in the given data set
     * Missing Data Check
@@ -157,7 +157,7 @@ For this project we will use Ensemble Learners to predict the wine classificatio
  <img width="501" alt="image" src="https://user-images.githubusercontent.com/95591222/168451540-08e03702-083a-485c-bf8b-a71cd83dead8.png">
         - The number of rows before merging was 1599 and the number of rows after merging was 6497. The columns remained at 14.
 
-3. Data Exploration
+### 3. Data Exploration
     * Counts
     * Averages 
 <img width="212" alt="image" src="https://user-images.githubusercontent.com/95591222/168451839-9ba42771-2a00-437c-862a-6fe33ce2593f.png">
@@ -195,14 +195,14 @@ For this project we will use Ensemble Learners to predict the wine classificatio
         - From the above chart we can see that free sulfur dioxide, total sulfer dioxide, and type have the highest values 
         - From the chart we can also see that the alcohol, density and volatile acidity have the lowest values
         
-4. Split into Training and Testing
+### 4. Split into Training and Testing
     * Defined Features 
     * Partitioned Data
 <img width="476" alt="image" src="https://user-images.githubusercontent.com/95591222/168452049-fdceff49-0e44-4950-93c2-77305816aec4.png">
         - Partition data into training (80%) and testing (20%)
         - Trained on 80 and tested on 20
         
-5. Models
+### 5. Models
     * Logistic Regression
 <img width="71" alt="image" src="https://user-images.githubusercontent.com/95591222/168452155-734514d9-7022-41cb-92d5-42aba459e124.png">
         - Accuracy score of .96184
