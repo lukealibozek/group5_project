@@ -51,79 +51,42 @@ quality_perc.fillna(0,inplace=True)
   
 ## Database
 
-To create the database, the individual CSVs needed to be pre-processed. 
+To create the database, the individual CSVs needed to be pre-processed:
 
 1. Data cleaned (mirroring work done in the Machine Learning step)
 2. Quality classified (wine scoring '5' or better is classified as 'good')
-3. A unique index created that would remain unique once both tables are combined (see below)
 
+The CSVs were then pushed to a postgres SQL database, combined via a SQL query and loaded directly into a new dataframe
+
+### Classification added
 ![](resources/db_class.png)
-Classification added
 
-![](resources/unique_index.png)
-Unique index created with prefix for the wine type
 
-From here, an Amazon AWS database was built, and manipulated via pgAdmin using PostGresSQL
-
-![](resources/aws1.png)
-
-![](resources/aws2.png)
-
-The schema was established:
-```sql
-DROP TABLE IF EXISTS red_wine;
-DROP TABLE IF EXISTS white_wine;  
-
-CREATE TABLE red_wine (
-  id VARCHAR(255) PRIMARY KEY NOT NULL,
-  fixed_acidity REAL,
-  volatile_acidity REAL,
-  citric_acid REAL,
-  residual_sugar REAL,
-  chlorides REAL,
-  free_sulfur_dioxide REAL,
-  total_sulfur_dioxide REAL,
-  density REAL,
-  pH REAL,
-  sulphates REAL,
-  alcohol REAL,
-  quality INT ,
-  type VARCHAR(255) ,
-  class VARCHAR(255) 
-);
-
-CREATE TABLE white_wine (
-  id VARCHAR(255) PRIMARY KEY NOT NULL,
-  fixed_acidity REAL,
-  volatile_acidity REAL,
-  citric_acid REAL,
-  residual_sugar REAL,
-  chlorides REAL,
-  free_sulfur_dioxide REAL,
-  total_sulfur_dioxide REAL,
-  density REAL,
-  pH REAL,
-  sulphates REAL,
-  alcohol REAL,
-  quality INT ,
-  type VARCHAR(255) ,
-  class VARCHAR(255) 
-);
+### Database Interaction
+```python
+import os
+from sqlalchemy import create_engine
+from dotenv import load_dotenv
+load_dotenv()
+password = os.environ.get('PASS2')
+db_path = f'postgresql://postgres:{password}@127.0.0.1:5432/wine_quality'
+engine = create_engine(db_path, echo=False)
+df_red.to_sql('red_wine_table',con = engine,if_exists='replace')
+df_white.to_sql('white_wine_table',con = engine,if_exists='replace')
 ```
-![](resources/postgres_test.png)
 
-Finally, the data was combined
 
-```sql
-DROP TABLE IF EXISTS combined;
+![](resources/NEW_postgres_local_proof.png)
 
-SELECT * INTO combined FROM red_wine
-UNION
-SELECT * FROM white_wine;
-
-SELECT * FROM combined;
+### SQL Query, Combined DataFrame
+```python
+df_combined = pd.read_sql("SELECT * FROM red_wine_table UNION SELECT * FROM white_wine_table",con = engine)
+df_combined.drop('index',axis=1,inplace=True)
+df_combined.head(40)
 ```
-![](resources/SQL%20join.png)
+
+![](resources/combined_df_via_python.png)
+
 
 ## Model
 
