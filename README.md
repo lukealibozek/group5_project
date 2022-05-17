@@ -131,6 +131,10 @@ For this project we will use Ensemble Learners to predict the wine classificatio
 
 
 1. Read in CSV and view data set
+ Markup : * Bullet list
+              * Nested bullet
+                  * Sub-nested bullet etc
+          * Bullet list item 2
 2. Data Cleaning    
 Compile Null Lists
 -There are no null values in the given data set
