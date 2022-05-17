@@ -133,11 +133,11 @@ For this project we will use Ensemble Learners to predict the wine classificatio
 #### 1. Read in CSV and view data set
 #### 2. Data Cleaning    
 - Compile Null Lists
-    *There are no null values in the given data set
-    * Missing Data Check
-        -There is no missing data
-    *Create DF with lists
-    *Set Index
+    - There are no null values in the given data set
+- Missing Data Check
+    - There is no missing data
+- Create DF with lists
+     - Set Index
 <img width="515" alt="image" src="https://user-images.githubusercontent.com/95591222/168451298-321e1ebe-1159-433a-8832-34c94e649305.png">
 
 - Quality Score Distribution
