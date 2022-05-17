@@ -130,13 +130,9 @@ SELECT * FROM combined;
 For this project we will use Ensemble Learners to predict the wine classification, as well as determining feature importance to assess which feature is more responsible for determining quality.
 
 
-1. Read in CSV and view data set
- Markup : * Bullet list
-              * Nested bullet
-                  * Sub-nested bullet etc
-          * Bullet list item 2
-2. Data Cleaning    
-Compile Null Lists
+Markup : 1. Read in CSV and view data set
+Markup : 2. Data Cleaning    
+                1. Compile Null Lists
 -There are no null values in the given data set
     * Missing Data Check
         -There is no missing data
