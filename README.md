@@ -166,57 +166,57 @@ For this project we will use Ensemble Learners to predict the wine classificatio
 - Averages 
 <img width="212" alt="image" src="https://user-images.githubusercontent.com/95591222/168451839-9ba42771-2a00-437c-862a-6fe33ce2593f.png">
   
-    *Created Dummy Variable for Strings "Type" and "Class"
+- Created Dummy Variable for Strings "Type" and "Class"
     
 <img width="42" alt="image" src="https://user-images.githubusercontent.com/95591222/168451860-9f30c511-265d-4512-a003-1d196a7bac80.png">    
     
 - Outliers
 <img width="169" alt="image" src="https://user-images.githubusercontent.com/95591222/168451879-c620b1ed-4751-43b5-9fb7-97b725d3a23e.png">
 
-        - This step helps us to identify mean, median, min, max and percentages(25,50,75) of feature attributes.
-        - 75% of the data has an alcohol percentage of 14.9
-        - Minimum value of sulphates is .22 and maximum of 2
+-This step helps us to identify mean, median, min, max and percentages(25,50,75) of feature attributes.
+-75% of the data has an alcohol percentage of 14.9
+-Minimum value of sulphates is .22 and maximum of 2
         
 - Bar Graphs 
 <img width="188" alt="image" src="https://user-images.githubusercontent.com/95591222/168451910-6ccbf03b-896b-47e5-89af-1a7b8f598f1f.png">
 
 - Boxplot
 <img width="630" alt="image" src="https://user-images.githubusercontent.com/95591222/168451925-1c62e435-6dc7-4796-9692-b406975cca2b.png">
-        - There are alot of outliers in almost every category
+-There are alot of outliers in almost every category
 <img width="632" alt="image" src="https://user-images.githubusercontent.com/95591222/168451951-e393c1b6-b660-451e-8529-df6432b7ae59.png">
 
 - Scatter
 <img width="412" alt="image" src="https://user-images.githubusercontent.com/95591222/168451959-d97f0063-ba5d-466f-b828-884117b72e1e.png">
 
-        - We are able to see how the different values are correlated with each other or not
-        - Total sulfur and sulfur have a slight linear relationship as the data skews right
-        - Most of the data shows there isnt a visable linear relationship 
+-We are able to see how the different values are correlated with each other or not
+-Total sulfur and sulfur have a slight linear relationship as the data skews right
+-Most of the data shows there isnt a visable linear relationship 
         
-    *Heatmap
+- Heatmap
 <img width="330" alt="image" src="https://user-images.githubusercontent.com/95591222/168451981-a95654dd-5c11-4ba1-a58b-b33ed216e213.png">
 
-        - The higher values are the darker shades and the less are the lighter shades
-        - From the above chart we can see that free sulfur dioxide, total sulfer dioxide, and type have the highest values 
-        - From the chart we can also see that the alcohol, density and volatile acidity have the lowest values
+-The higher values are the darker shades and the less are the lighter shades
+-From the above chart we can see that free sulfur dioxide, total sulfer dioxide, and type have the highest values 
+-From the chart we can also see that the alcohol, density and volatile acidity have the lowest values
         
 #### 4. Split into Training and Testing
-    *Defined Features 
-    *Partitioned Data
+- Defined Features 
+- Partitioned Data
 <img width="476" alt="image" src="https://user-images.githubusercontent.com/95591222/168452049-fdceff49-0e44-4950-93c2-77305816aec4.png">
-        - Partition data into training (80%) and testing (20%)
-        - Trained on 80 and tested on 20
+-Partition data into training (80%) and testing (20%)
+-Trained on 80 and tested on 20
         
 #### 5. Models
-    *Logistic Regression
+- Logistic Regression
 <img width="71" alt="image" src="https://user-images.githubusercontent.com/95591222/168452155-734514d9-7022-41cb-92d5-42aba459e124.png">
-        - Accuracy score of .96184
+-Accuracy score of .96184
   
-    *Random Forrest
+- Random Forrest
 <img width="274" alt="image" src="https://user-images.githubusercontent.com/95591222/168452208-8ba14414-9f12-47f3-b083-f0c311b17eb4.png">
-        - The features of the most importance are free sulfer dioxide, volatile acidity, total sulfur dioxide. 
-        - The features of the least importance are fixed acidity, alcohol, or type. 
+-The features of the most importance are free sulfer dioxide, volatile acidity, total sulfur dioxide. 
+-The features of the least importance are fixed acidity, alcohol, or type. 
 
-    *Linear Regression
+- Linear Regression
 <img width="194" alt="image" src="https://user-images.githubusercontent.com/95591222/168452267-3412f760-624c-443a-a62a-ddfee996a381.png">
     
    
