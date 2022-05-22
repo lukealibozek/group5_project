@@ -14,7 +14,7 @@ The data relates to red and white Vinho Verde wine samples, and their physicoche
 This project will aim to determine the following:
 1. Is a "Good" wine able to be predicted via the analysis of a wine's physicochemical properties? 
 2. What physicochemical features are most responsible for determining wine quality?
-3. Can a 'good' wine be chemically determined agnostic of wine type (red or white)?
+3. Can a 'good' wine be predicted using a chemical analysis agnostic of wine type (red or white)?
 
 
 ## Analysis
@@ -246,6 +246,6 @@ What physicochemical features are most responsible for determining wine quality?
   - Density (.11)
 
 ## **Question 3**: 
-Can a 'good' wine be chemically determined agnostic of wine type (red or white)?
+Can a 'good' wine be predicted using a chemical analysis agnostic of wine type (red or white)?
 
 - Yes - interestingly, wine type was the least important feature by a large amount.
