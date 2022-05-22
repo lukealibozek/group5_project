@@ -14,6 +14,7 @@ The data relates to red and white Vinho Verde wine samples, and their physicoche
 This project will aim to determine the following:
 1. Is a "Good" wine able to be predicted via the analysis of a wine's physicochemical properties? 
 2. What physicochemical features are most responsible for determining wine quality?
+3. Can a 'good' wine be chemically determined agnostic of wine type (red or white)?
 
 
 ## Analysis
@@ -221,9 +222,29 @@ Model Intercept: 282.1937840924431
 
 ## The Presentation / Dashboard
 
-[**Dashboard**](https://public.tableau.com/views/wine_quality_16531982408620/Story1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
+[Dashboard](https://public.tableau.com/views/wine_quality_16531982408620/Story1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
 
 [Google Slides: Machine Learning, with Wine](https://docs.google.com/presentation/d/e/2PACX-1vTqoan2hVpKwoYIjAuQ4W-HpfsUVRlLGqymMuUIjRB6PQTaazfvCgaU0s7ISnSQ8RkUpHCy7jH6RrF8/pub?start=false&loop=false&delayms=50000)
 
 # Conclusion
 
+**Question 1**: Is a "Good" wine able to be predicted via the analysis of a wine's physicochemical properties? 
+
+- Logistic Regression was able to output an accuracy score of 71%
+- Random Forest scored an F1 of 69%
+  - Recall: 69%
+  - Precision: 72%
+
+Moderately so, an algorithm can predict a good wine.
+
+**Question 2**: What physicochemical features are most responsible for determining wine quality?
+
+Based on Random Forest feature importance rankings, the following three provided the most value:
+
+- Alcohol (0.17)
+- Volatile Acidity (0.11)
+- Density (.11)
+
+**Question 3**: Can a 'good' wine be chemically determined agnostic of wine type (red or white)?
+
+Yes - interestingly, wine type was the least important feature by a large amount.
