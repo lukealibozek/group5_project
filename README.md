@@ -41,7 +41,7 @@ df_white["type"] = 'white'
 
 The distribution of wine quality was assessed by creating a new dataframe using normalized value counts (quality scores represented as percentages of total wine counts).
 
-Based on this analysis, a quality threshold was set at 6.
+Based on this analysis, a **quality threshold was set at 6**.
 
 ```python
 # Count number of values per score, per wine type (normalize creates a percent of total value)
@@ -63,9 +63,9 @@ quality_perc.fillna(0,inplace=True)
 
 ![](resources/Quality_distro.png)
 
-![](resources/good_threshold.png)
-  
-Adding a Classification Column
+![](resources/Q-thresh-good.png)  
+
+**Adding a Classification Column**
 
 Based on this determination, a new column was added to each dataset to denote good/bad classification. 
 
