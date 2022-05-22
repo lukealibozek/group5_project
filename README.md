@@ -2,17 +2,23 @@
 
 For this project we aim to assess wine quality, and whether it is possible to classify a wine based on its chemical properties.
 
-## Sources
+## Data Sources
 
 The data sources used for this analysis were pulled from UCI's machine learning repository, donated by Paulo Cortez of the University of Minho, Portugal (P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis).
 - **Wine Quality Datasets** [(view)](http://www3.dsi.uminho.pt/pcortez/wine/)
 
 The data relates to red and white Vinho Verde wine samples, and their physicochemical properties.
 
-## EDA
+## Overview: Questions we hope to answer
 
-<details>
-    <summary>Click here to expand...</summary>
+This project will aim to determine the following:
+1. Is a "Good" wine able to be predicted via the analysis of a wine's physicochemical properties? 
+2. What physicochemical features are most responsible for determining wine quality?
+
+
+## Analysis
+
+### Data Cleaning
 
 The dataset was originally in the form of two CSV's - one for red wine, one for white:
 
@@ -22,7 +28,20 @@ The data types were assessed, in addition to checking for Null/NA values.
 
 ![](resources/data_cleaning.png)
 
+### Data Exploration, Pre-Processing
+
+**Quality Score Distribution Analysis**
+
+A column denoting wine type (red or white) was added to each dataframe. 
+
+```python
+df_red["type"] = 'red'
+df_white["type"] = 'white'
+```
+
 The distribution of wine quality was assessed by creating a new dataframe using normalized value counts (quality scores represented as percentages of total wine counts).
+
+Based on this analysis, a quality threshold was set at 6.
 
 ```python
 # Count number of values per score, per wine type (normalize creates a percent of total value)
@@ -44,157 +63,167 @@ quality_perc.fillna(0,inplace=True)
 
 ![](resources/Quality_distro.png)
 
-
 ![](resources/good_threshold.png)
   
-</details>
-  
-## Database
+Adding a Classification Column
 
-To create the database, the individual CSVs needed to be pre-processed:
+Based on this determination, a new column was added to each dataset to denote good/bad classification. 
 
-1. Data cleaned (mirroring work done in the Machine Learning step)
-2. Quality classified (wine scoring '5' or better is classified as 'good')
-
-The CSVs were then pushed to a postgres SQL database, combined via a SQL query and loaded directly into a new dataframe
-
-### Classification added
-![](resources/db_class.png)
-
-
-### Database Interaction
 ```python
-import os
-from sqlalchemy import create_engine
-from dotenv import load_dotenv
+df_red['class'] = ['good' if x >=q_thresh else 'bad' for x in df_red['quality']]
+df_white['class'] = ['good' if x >=q_thresh else 'bad' for x in df_white['quality']]
+```
+
+### Database: Create Tables
+
+A postgres database was created using pgAdmin.
+
+```python
+# load .env for database password
 load_dotenv()
 password = os.environ.get('PASS2')
+
+# connect to database
 db_path = f'postgresql://postgres:{password}@127.0.0.1:5432/wine_quality'
 engine = create_engine(db_path, echo=False)
+
+# write DFs to tables
 df_red.to_sql('red_wine_table',con = engine,if_exists='replace')
 df_white.to_sql('white_wine_table',con = engine,if_exists='replace')
 ```
 
-
 ![](resources/NEW_postgres_local_proof.png)
 
-### SQL Query, Combined DataFrame
+
+### Database: Merge Tables
+
+The tables were merged using a SQL UNION query
+
 ```python
 df_combined = pd.read_sql("SELECT * FROM red_wine_table UNION SELECT * FROM white_wine_table",con = engine)
 df_combined.drop('index',axis=1,inplace=True)
-df_combined.head(40)
 ```
 
 ![](resources/combined_df_via_python.png)
 
+## Data Exploration: Combined Dataframe
+
+### Volume
+Using the combined dataframe, more data exploration was performed.
+
+![](resources/bar_volume_type.png)
+
+**Note**: There are a lot more white wine samples than red wine samples
+
+![](resources/bar_volume_class.png)
+
+**Observations**: There are more "good" wines than "bad"
+
+### Outliers
+
+![](resources/boxplot1.png)
+
+![](resources/boxplot2.png)
+
+![](resources/boxplot3.png)
+
+**Observations**: There are a considerable number of outliers within most features. This raises some concern regarding how accurate a machine learning model will be in predicting outcomes.
+
+### Scatter: Linear Relationships
+
+![](resources/scatter.png)
+
+**Observations**: 
+- From a high-level perspective, there do not appear to be significant linear relationships between data points.
+- Total sulfur and sulfur have a slight linear relationship as the data skews right
+
+### Heatmap
+
+![](resources/heatmap.png)
+
+**Observations**:
+- From the above chart we can see that free sulfur dioxide, total sulfer dioxide, and type have the highest values 
+- From the chart we can also see that the alcohol, density and volatile acidity have the lowest values
 
 ## Model
 
 For this project we will use Ensemble Learners to predict the wine classification, as well as determining feature importance to assess which feature is more responsible for determining quality.
 
+## Machine Learning
 
-#### 1. Read in CSV and view data set
-#### 2. Data Cleaning    
-- Compile Null Lists
-    - There are no null values in the given data set
-- Missing Data Check
-    - There is no missing data
-- Create DF with lists
-     - Set Index
-<img width="515" alt="image" src="https://user-images.githubusercontent.com/95591222/168451298-321e1ebe-1159-433a-8832-34c94e649305.png">
+### Pre-Processing: Dummy Variables
 
-- Quality Score Distribution
-- Fill Blanks with 0
-<img width="81" alt="image" src="https://user-images.githubusercontent.com/95591222/168451310-3adc685c-5e4e-40d0-aa0e-6fbc40c9f861.png">
+Column values for "type" and "class" were converted to 0's and 1's
 
+![](resources/dummy.png)
 
-- Visualization of Distribution of Wine Quality Scores by Type
-<img width="191" alt="image" src="https://user-images.githubusercontent.com/95591222/168451336-dee4b34d-f5b9-4cbf-87b0-abfbd58511fe.png">
--Red wine max quality score was 8, while White wine maxed at 9
+        
+### Split into Training and Testing
 
+First, features and a target were defined:
 
+```python
+# Define features set
+X = df_combined.copy().drop(['class', 'quality'],axis=1)
+
+# Define target vector
+y = df_combined["class"]
+```
+Next, data was split into testing and training subsets with an 80/20 split
+
+```python
+# Trained on 80 and tested on 20
+train_X, test_X, train_y, test_y = train_test_split(X, y, test_size=0.2, random_state=1)
+
+#Standardize independent variables in ALL data (zero mean and unit variance)
+std_X_train = StandardScaler().fit_transform(train_X)
+std_X_test = StandardScaler().fit_transform(test_X)
+
+std_train_df = pd.DataFrame(std_X_train, columns=train_X.columns)
+std_test_df = pd.DataFrame(std_X_test, columns=test_X.columns)
+```
+
+![](resources/testtrainsplit.png)
+
+        
+### Logistic Regression
+![](resources/logReg.png)
+
+**Accuracy score**: .7311
   
-- Set Classification Column (If wine is greater 5 its "good")
-<img width="188" alt="image" src="https://user-images.githubusercontent.com/95591222/168451362-fd45226a-aa10-40b5-88dd-4cd070f69660.png">
--Distribution is relatively even across both wines, with most wines scoring 5's and 6's.However, when it is too balanced it ends up giving us the perfect model. The first classification was set at 7 and gave an accuracy of 100%. By moving the threshold to 5 we can get a more realiable model. 
+### Random Forest
 
-     
+![](resources/rndforest.png)
 
-- Combine Dataframes
- <img width="501" alt="image" src="https://user-images.githubusercontent.com/95591222/168451540-08e03702-083a-485c-bf8b-a71cd83dead8.png">
--The number of rows before merging was 1599 and the number of rows after merging was 6497. The columns remained at 14.
+**Feature Importance - Most**: The features of the most importance are 
+- Alcohol (0.17)
+- Volatile Acidity (0.11)
+- Density (.11)
 
-#### 3. Data Exploration
-- Counts
-- Averages 
-<img width="212" alt="image" src="https://user-images.githubusercontent.com/95591222/168451839-9ba42771-2a00-437c-862a-6fe33ce2593f.png">
-  
-- Created Dummy Variable for Strings "Type" and "Class"
-    
-<img width="42" alt="image" src="https://user-images.githubusercontent.com/95591222/168451860-9f30c511-265d-4512-a003-1d196a7bac80.png">    
-    
-- Outliers
-<img width="169" alt="image" src="https://user-images.githubusercontent.com/95591222/168451879-c620b1ed-4751-43b5-9fb7-97b725d3a23e.png">
+**Feature Importance - Least**: The features of the least importance are:
+- pH (0.07)
+- Fixed Acidity (.63)
+- Wine Type (.004)
 
--This step helps us to identify mean, median, min, max and percentages(25,50,75) of feature attributes.
--75% of the data has an alcohol percentage of 14.9
--Minimum value of sulphates is .22 and maximum of 2
-        
-- Bar Graphs 
-<img width="188" alt="image" src="https://user-images.githubusercontent.com/95591222/168451910-6ccbf03b-896b-47e5-89af-1a7b8f598f1f.png">
+### Linear Regression
 
-- Boxplot
-<img width="630" alt="image" src="https://user-images.githubusercontent.com/95591222/168451925-1c62e435-6dc7-4796-9692-b406975cca2b.png">
--There are alot of outliers in almost every category
-<img width="632" alt="image" src="https://user-images.githubusercontent.com/95591222/168451951-e393c1b6-b660-451e-8529-df6432b7ae59.png">
+Using the features 'alcohol' and 'density', outlined above as 2 of the 3 more important features, linear regression was performed:
 
-- Scatter
-<img width="412" alt="image" src="https://user-images.githubusercontent.com/95591222/168451959-d97f0063-ba5d-466f-b828-884117b72e1e.png">
+![](resources/linReg.png)
 
--We are able to see how the different values are correlated with each other or not
--Total sulfur and sulfur have a slight linear relationship as the data skews right
--Most of the data shows there isnt a visable linear relationship 
-        
-- Heatmap
-<img width="330" alt="image" src="https://user-images.githubusercontent.com/95591222/168451981-a95654dd-5c11-4ba1-a58b-b33ed216e213.png">
+![](resources/linReg2.png)
 
--The higher values are the darker shades and the less are the lighter shades
--From the above chart we can see that free sulfur dioxide, total sulfer dioxide, and type have the highest values 
--From the chart we can also see that the alcohol, density and volatile acidity have the lowest values
-        
-#### 4. Split into Training and Testing
-- Defined Features 
-- Partitioned Data
-<img width="476" alt="image" src="https://user-images.githubusercontent.com/95591222/168452049-fdceff49-0e44-4950-93c2-77305816aec4.png">
--Partition data into training (80%) and testing (20%)
--Trained on 80 and tested on 20
-        
-#### 5. Models
-- Logistic Regression
-<img width="71" alt="image" src="https://user-images.githubusercontent.com/95591222/168452155-734514d9-7022-41cb-92d5-42aba459e124.png">
--Accuracy score of .96184
-  
-- Random Forrest
-<img width="274" alt="image" src="https://user-images.githubusercontent.com/95591222/168452208-8ba14414-9f12-47f3-b083-f0c311b17eb4.png">
--The features of the most importance are free sulfer dioxide, volatile acidity, total sulfur dioxide. 
--The features of the least importance are fixed acidity, alcohol, or type. 
+```
+Model Coefficient: [-273.15060092]
+Model Intercept: 282.1937840924431
+```
 
-- Linear Regression
-<img width="194" alt="image" src="https://user-images.githubusercontent.com/95591222/168452267-3412f760-624c-443a-a62a-ddfee996a381.png">
-    
-   
-## The Question(s)
-
-This project will aim to determine the following:
-1. Is a "Good" wine able to be predicted via the analysis of a wine's physicochemical properties? 
-2. What physicochemical features are most responsible for determining wine quality?
-3. Can a wine quality evaluation be conducted agnostic of wine type (red or white), or do such evaluations need to remain segregated by type?
 
 ## The Presentation / Dashboard
 
-Dashboard
-https://public.tableau.com/views/wine_quality_16531982408620/Story1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
+[**Dashboard**](https://public.tableau.com/views/wine_quality_16531982408620/Story1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
 
 [Google Slides: Machine Learning, with Wine](https://docs.google.com/presentation/d/e/2PACX-1vTqoan2hVpKwoYIjAuQ4W-HpfsUVRlLGqymMuUIjRB6PQTaazfvCgaU0s7ISnSQ8RkUpHCy7jH6RrF8/pub?start=false&loop=false&delayms=50000)
 
+# Conclusion
 
