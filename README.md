@@ -192,6 +192,9 @@ This project will aim to determine the following:
 
 ## The Presentation / Dashboard
 
+Dashboard
+https://public.tableau.com/views/wine_quality_16531982408620/Story1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link
+
 [Google Slides: Machine Learning, with Wine](https://docs.google.com/presentation/d/e/2PACX-1vTqoan2hVpKwoYIjAuQ4W-HpfsUVRlLGqymMuUIjRB6PQTaazfvCgaU0s7ISnSQ8RkUpHCy7jH6RrF8/pub?start=false&loop=false&delayms=50000)
 
 
