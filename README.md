@@ -210,7 +210,7 @@ std_test_df = pd.DataFrame(std_X_test, columns=test_X.columns)
 
 Using the features 'alcohol' and 'density', outlined above as 2 of the 3 more important features, linear regression was performed:
 
-![](resources/linReg.png)
+![](resources/linReg1.png)
 
 ![](resources/linReg2.png)
 
