@@ -62,9 +62,9 @@ quality_perc.fillna(0,inplace=True)
 
 ![](resources/quality_table.png)
 
-![](resources/Quality_distro.png)
+![](resources/Quality_distro1.png)
 
-![](resources/Q-thresh-good.png)  
+![](resources/Q-thresh-good1.png)  
 
 **Adding a Classification Column**
 
