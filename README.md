@@ -46,8 +46,8 @@ Based on this analysis, a **quality threshold was set at 6**.
 
 ```python
 # Count number of values per score, per wine type (normalize creates a percent of total value)
-red_quality = df_red['quality'].value_counts(normalize=True)
-white_quality = df_white['quality'].value_counts(normalize=True)
+red_quality = df_red['quality'].value_counts()
+white_quality = df_white['quality'].value_counts()
 
 # Create emplty DF for both wine types, and quality scores from 1 to 10
 quality_perc = pd.DataFrame(columns=('Red','White'),index=list(range(1,11)))
@@ -60,7 +60,7 @@ quality_perc['White'] = white_quality
 quality_perc.fillna(0,inplace=True)
 ```
 
-![](resources/quality_table.png)
+![](resources/quality_table1.png)
 
 ![](resources/Quality_distro1.png)
 
